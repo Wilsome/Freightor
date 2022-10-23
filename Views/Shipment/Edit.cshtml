@@ -1,0 +1,109 @@
+﻿@model Shipment
+
+<h3>Edit Shipper?</h3>
+<form asp-controller="Shipment" asp-action="Edit" method="post">
+    <div class="form-group" hidden>
+        <input asp-for="@Model.Id" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Shipper.BusinessName" class="form-label">Shipper name</label>
+        <input type="text" asp-for="Shipper.BusinessName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Shipper.Street" class="form-label">Street</label>
+        <input type="text" asp-for="Shipper.Street" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Shipper.City" class="form-label">City</label>
+        <input type="text" asp-for="Shipper.City" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Shipper.State" class="form-label">State</label>
+        <input type="text" asp-for="Shipper.State" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Shipper.Zip" class="form-label">Zip code</label>
+        <input type="text" asp-for="Shipper.Zip" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Shipper.Unit" class="form-label">Unit</label>
+        <input type="text" asp-for="Shipper.Unit" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Consignee.BusinessName" class="form-label">Consignee name</label>
+        <input type="text" asp-for="Consignee.BusinessName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Consignee.Street" class="form-label">Street</label>
+        <input type="text" asp-for="Consignee.Street" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Consignee.City" class="form-label">City</label>
+        <input type="text" asp-for="Consignee.City" class="form-control" />
+    </div>
+        <div class="form-group">
+        <label asp-for="Consignee.State" class="form-label">State</label>
+        <input type="text" asp-for="Consignee.State" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Consignee.Zip" class="form-label">Zip</label>
+        <input type="text" asp-for="Consignee.Zip" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Consignee.Unit" class="form-label">Unit</label>
+        <input type="text" asp-for="Consignee.Unit" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="TrackingNumber" class="form-label">Tracking number</label>
+        <input type="text" asp-for="TrackingNumber" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Status" class="form-label">Status</label>
+        <input type="text" asp-for="Status" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Carrier" class="form-label">Carrier</label>
+        <input type="text" asp-for="Carrier" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Cost" class="form-label">Cost</label>
+        <input type="text" asp-for="Cost" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="QuotedAmount" class="form-label">Quoted amount</label>
+        <input type="text" asp-for="QuotedAmount" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Pieces" class="form-label">Pieces</label>
+        <input type="text" asp-for="Pieces" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Weight" class="form-label">Weight</label>
+        <input type="text" asp-for="Weight" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Description" class="form-label">Description</label>
+        <input type="text" asp-for="Description" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="hidden" asp-for="ShipmentNotes" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="hidden" asp-for="Shipper.Contacts" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="hidden" asp-for="Consignee.Contacts" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="hidden" asp-for="Consignee.PointNotes" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="hidden" asp-for="Shipper.PointNotes" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="hidden" asp-for="EnteredBy" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-success">Confirm</button>
+    <a asp-controller="Shipment" asp-action="Index" class="btn btn-primary">To list</a>
+</form>
+

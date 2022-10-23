@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Shipment>
+
+<table class="table table-responsive table-stripped">
+    <thead>
+        <tr>
+            <th scope="col">@Html.DisplayNameFor(s =>s.Shipper)</th>
+            <th scope="col">@Html.DisplayNameFor(s =>s.Consignee)</th>
+            <th scope="col">@Html.DisplayNameFor(s =>s.TrackingNumber)</th>
+            <th scope="col">@Html.DisplayNameFor(s =>s.Carrier)</th>
+            <th scope="col">@Html.DisplayNameFor(s =>s.Status)</th>
+            <th scope="col">Information</th>
+
+        </tr>
+    </thead>
+    @foreach (Shipment shipment in Model)
+    {
+        <tr>
+            <td>@shipment.Shipper.BusinessName</td>
+            <td>@shipment.Consignee.BusinessName</td>
+            <td>@shipment.TrackingNumber</td>
+            <td>@shipment.Carrier</td>
+            <td>@shipment.Status</td>
+            <td><a asp-controller="Shipment" asp-action="Details" asp-route-id="@shipment.Id">Details</a></td>
+        </tr>
+    }
+</table>

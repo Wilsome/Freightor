@@ -1,0 +1,32 @@
+﻿@model Shipment
+
+<h4>Shipment Details</h4>
+
+<div class="card" style="width: 30rem;">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Carrier Shipment: Tracking# @Model.TrackingNumber</h5>
+        <p class="card-text">
+            @Model.Shipper.BusinessName @Model.Shipper.Street @Model.Shipper.City
+            @Model.Shipper.Zip
+        </p>
+        <p class="card-text">
+            @Model.Consignee.BusinessName @Model.Consignee.Street @Model.Consignee.City
+            @Model.Consignee.Zip
+        </p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Pieces: @Model.Pieces</li>
+        <li class="list-group-item">Weight: @Model.Weight</li>
+        <li class="list-group-item">Description: @Model.Description</li>
+        @foreach (ShipmentNote note in Model.ShipmentNotes)
+        {
+            <li class="list-group-item">Notes: @note.Note Date @note.Created</li>
+        }
+        <li class="list-group-item">Cost: @Model.Cost Quoted: @Model.QuotedAmount</li>
+    </ul>
+    <div class="card-body">
+        <a asp-controller="Shipment" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+        <a asp-controller="Shipment" asp-action="AddNote" asp-route-id="@Model.Id" class="btn btn-primary">Add note</a>
+        <a asp-controller="Shipment" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger">Delete</a>
+    </div>
+</div>
